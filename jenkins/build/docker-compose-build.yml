@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    # esta imagen la va a crear jenkins, por lo que interesa que maneje algun tipo de version
+    # esa version la podemos sacar de la var de entorno de jenkins BUILD_TAG
+    #image: "dgarciahz/test1:$BUILD_TAG"
+    #aqui aun no decimos nada del repo al que ira, solo creamos la imagen
+    image: "test1:$BUILD_TAG"
+    build:
+      context: .
+      dockerfile: Dockerfile-java

@@ -1,0 +1,15 @@
+FROM jenkins/jenkins:lts-jdk11
+ 
+USER root
+
+RUN apt-get update && apt-get -y install ansible \
+    iputils-ping \
+    sudo
+
+# instalaos Ansible 
+#RUN apt-get update && apt-get -y install ansible
+
+# added para tener ping dentro del contenedor y poder chequear la conectividad del hosts ansible
+#RUN apt-get update && apt-get -y install iputils-ping
+ 
+USER jenkins
